@@ -32,7 +32,9 @@ NEUTRON_BRANCH={neutron_branch}
 
 OS_BRANCH=stable/icehouse
 
+REQUIREMENTS_REPO=https://github.com/nikolay-fedotov/requirements.git
 REQUIREMENTS_BRANCH=$OS_BRANCH
+
 PBR_BRANCH=0.10.0
 CLIFF_BRANCH=1.6.1
 OSLOI18N_BRANCH=0.2.0
