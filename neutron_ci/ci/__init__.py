@@ -73,6 +73,7 @@ msg = ['export {0}={1}'.format(key, values[key])
 msg.insert(0, os.linesep)
 logger.debug(os.linesep.join(msg))
 
+print dir()
 # Raise exception if there are undefined variables
 nullable = ['NEXUS_IP', 'NEXUS_USER', 'NEXUS_PASSWORD',
             'NEXUS_INTF_NUM', 'NEXUS_VLAN_START', 'NEXUS_VLAN_END']
