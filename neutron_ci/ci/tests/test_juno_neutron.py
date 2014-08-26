@@ -142,6 +142,7 @@ class JunoNeutronTest(NexusTestCase):
                                 router_user=NEXUS_USER,
                                 router_pass=NEXUS_PASSWORD)
 
+        cls.devstack._git_branch = 'stable/icehouse'
         cls.devstack.local_conf = local_conf
         cls.devstack.clone()
 
