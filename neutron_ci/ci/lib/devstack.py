@@ -33,7 +33,7 @@ class DevStack(object):
         self.localrc = localrc
         self.local_conf = local_conf
         self._git_url = git_url
-        self._git_branch = git_branch
+        self.git_branch = git_branch
         self._clone_path = os.path.expanduser(clone_path)
         self.localrc_path = os.path.join(self._clone_path, 'localrc')
         self.localconf_path = os.path.join(self._clone_path, 'local.conf')
@@ -50,7 +50,7 @@ class DevStack(object):
                 return
         logger.info('Clone DevStack to {0}'.format(self._clone_path))
         cmd = 'git clone --depth=1 -b {branch} {url} {dest}'.format(
-            branch=self._git_branch, url=self._git_url, dest=self._clone_path)
+            branch=self.git_branch, url=self._git_url, dest=self._clone_path)
         output, code = utils.run_cmd_line(cmd)
         logger.info(output)
 

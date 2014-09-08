@@ -14,7 +14,7 @@
 #
 # @author: Dane LeBlanc, Nikolay Fedotov, Cisco Systems, Inc.
 import os
-from ci import WORKSPACE
+from ci import WORKSPACE, ZUUL_BRANCH
 
 from ci.lib.test_case import BaseTestCase
 from ci.lib.utils import run_cmd_line
@@ -68,6 +68,7 @@ class IPv6Test(BaseTestCase):
         BaseTestCase.setUpClass()
 
         cls.devstack.local_conf = LOCAL_CONF
+        cls.devstack.git_branch = ZUUL_BRANCH
         cls.devstack.clone()
         cls.devstack.download_gerrit_change('refs/changes/87/87987/14')
 

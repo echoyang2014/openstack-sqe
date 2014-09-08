@@ -18,7 +18,7 @@ import urlparse
 import os
 from ci import ZUUL_URL, ZUUL_PROJECT, ZUUL_REF, NEXUS_IP, \
     NEXUS_PASSWORD, NEXUS_USER, NEXUS_INTF_NUM, NEXUS_VLAN_END, \
-    NEXUS_VLAN_START, SCREEN_LOG_PATH, PARENT_FOLDER_PATH
+    NEXUS_VLAN_START, SCREEN_LOG_PATH, PARENT_FOLDER_PATH, ZUUL_BRANCH
 from ci.lib.test_case import NexusTestCase
 
 
@@ -82,6 +82,7 @@ class MonolithicNexusTest(NexusTestCase):
             JOB_LOG_PATH=SCREEN_LOG_PATH)
 
         cls.devstack.local_conf = local_conf
+        cls.devstack.git_branch = ZUUL_BRANCH
         cls.devstack.clone()
 
     def test_tempest(self):

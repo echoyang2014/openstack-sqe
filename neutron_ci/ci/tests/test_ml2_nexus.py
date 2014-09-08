@@ -19,7 +19,7 @@ import urlparse
 import os
 from ci import PARENT_FOLDER_PATH, ZUUL_URL, ZUUL_PROJECT, WORKSPACE, \
     NEXUS_VLAN_START, NEXUS_VLAN_END, SCREEN_LOG_PATH, \
-    NEXUS_INTF_NUM, NEXUS_IP, NEXUS_USER, NEXUS_PASSWORD, ZUUL_REF
+    NEXUS_INTF_NUM, NEXUS_IP, NEXUS_USER, NEXUS_PASSWORD, ZUUL_REF, ZUUL_BRANCH
 from ci.lib.test_case import NexusTestCase
 
 
@@ -114,6 +114,7 @@ class ML2NexusTest(NexusTestCase):
                                 router_pass=NEXUS_PASSWORD)
 
         cls.devstack.local_conf = local_conf
+        cls.devstack.git_branch = ZUUL_BRANCH
         cls.devstack.clone()
 
     def test_tempest(self):

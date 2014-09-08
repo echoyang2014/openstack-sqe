@@ -17,7 +17,7 @@
 import urlparse
 import os
 from ci import PARENT_FOLDER_PATH, ZUUL_URL, ZUUL_PROJECT, \
-    ZUUL_REF, SCREEN_LOG_PATH
+    ZUUL_REF, SCREEN_LOG_PATH, ZUUL_BRANCH
 from ci.lib.test_case import BaseTestCase
 
 
@@ -70,6 +70,7 @@ class VpnaasNexusTest(BaseTestCase):
             JOB_LOG_PATH=SCREEN_LOG_PATH)
 
         cls.devstack.local_conf = local_conf
+        cls.devstack.git_branch = ZUUL_BRANCH
         cls.devstack.clone()
         cls.devstack.patch(os.path.join(
             PARENT_FOLDER_PATH, 'cisco_vpnaas_enabled.devstack.patch'))
