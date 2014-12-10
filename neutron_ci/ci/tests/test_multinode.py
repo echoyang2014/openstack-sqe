@@ -25,7 +25,7 @@ HOST_IP={CONTROL_HOST_IP}
 
 MULTI_HOST=1
 
-disable_service n-net heat h-api h-api-cfn h-api-cw h-eng cinder c-api c-sch c-vol n-novnc horizon
+disable_service n-net heat h-api h-api-cfn h-api-cw h-eng cinder c-api c-sch c-vol n-novnc horizon q-vpn q-lbaas
 enable_service neutron
 enable_service tempest
 enable_service q-svc
@@ -34,8 +34,6 @@ enable_service q-dhcp
 enable_service q-l3
 enable_service q-meta
 enable_service n-cpu
-enable_service q-vpn
-enable_service q-lbaas
 
 MYSQL_PASSWORD=nova
 RABBIT_PASSWORD=nova
